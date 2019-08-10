@@ -1,0 +1,12 @@
+server:
+   port: 9000
+spring:
+   application:  
+      name: spring-proxy-server
+zuul:
+   routes:
+      products:
+         path: /api/**
+         stripPrefix: true
+         url: http://localhost:9090/
+          
