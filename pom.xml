@@ -20,6 +20,7 @@
 		<module>spring-product-api</module>
 		<module>spring-proxy-server</module>
 		<module>spring-rest-jwt</module>
+		<module>spring-okta-oauth-example</module>
 	</modules>
 
 </project>
