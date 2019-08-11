@@ -19,6 +19,7 @@
 	<modules>
 		<module>spring-product-api</module>
 		<module>spring-proxy-server</module>
+		<module>spring-rest-jwt</module>
 	</modules>
 
 </project>
