@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Home page</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+    	<p>
+        <span>Welcome to Spring Data JPA Pagination Example</span>
+        </p>
+        <p>
+        <span th:text="'Today is: ' + ${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}" th:remove="tag"></span>
+        </p>
+        <p>
+        <span>Click <a th:href="@{/books}">here</a> to find the list of books available</span>
+        </p>
+    </body>
+</html>

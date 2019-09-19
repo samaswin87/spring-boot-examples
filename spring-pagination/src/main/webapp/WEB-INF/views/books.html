@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<style>
+.pagination {
+	display: inline-block;
+}
+.pagination a {
+	color: black;
+	float: left;
+	padding: 5px 5px;
+	text-decoration: none;
+}
+.pagination a.active {
+	background-color: gray;
+	color: white;
+	border-radius: 2px;
+}
+</style>
+<head>
+<title>Books</title>
+</head>
+<body>
+    <h1>Book List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th> Book ID </th>
+                <th> Book Name </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="book: ${books}">
+                <td th:text="${book.id}" />
+                <td th:text="${book.name}" />
+            </tr>
+        </tbody>
+    </table>
+    <div th:if="${books.totalPages > 0}" class="pagination"
+        th:each="pageNumber : ${pageNumbers}">
+        <a th:href="@{/books(page=${pageNumber})}"
+            th:text=${pageNumber}
+            th:class="${pageNumber==books.number + 1} ? active"></a>
+    </div>
+
+    <div>
+        <p>
+            <a th:href="@{/}"> Return to home</a>
+        </p>
+    </div>
+</body>
+</html>
